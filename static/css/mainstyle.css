@@ -1,0 +1,30 @@
+body {
+    background-image: url(/static/img/wyethbak_bg_2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Navbg-deepOrange {
+    background-color: #ff6600;    
+}
+
+.navbar-txt {
+    color: #000;
+}
+
+.navbar-txt a {
+    color: #000;
+    font-size: 22px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.welcomeClass {
+    margin: 300px auto;
+    width: 50%;
+    height: 50%;
+}
+
+.ptxtClass {
+    font-stretch: semi-expanded;
+    font-size: 18px;
+    font-family: 'Ubuntu', sans-serif;
+}
