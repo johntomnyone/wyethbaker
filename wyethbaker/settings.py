@@ -17,7 +17,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost', 'www.wyethbaker.com', 'wyethbaker.com', 'server261.web-hosting.com', '198.54.125.177']
 
 
 # Application definition
