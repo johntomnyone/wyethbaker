@@ -3,6 +3,8 @@ import django_heroku
 import dj_database_url
 from decouple import config
 from . secret_settings import *
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -15,7 +17,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost', 'www.wyethbaker.com', 'wyethbaker.com', 'server261.web-hosting.com', '198.54.125.177']
 
@@ -124,3 +126,14 @@ LOGIN_URL = '/bakerapp/user_login/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals())
+
+
+
+sentry_sdk.init(
+    dsn="https://a639ed5850c04b4eae8010e1068d70ff@o383839.ingest.sentry.io/5214277",
+    integrations=[DjangoIntegration()],
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)

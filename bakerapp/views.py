@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 def index(request):
     return render(request,'bakerapp/index.html')
@@ -51,6 +52,7 @@ def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+
         user = authenticate(username=username, password=password)
         if user:
             if user.is_active:
@@ -59,8 +61,14 @@ def user_login(request):
             else:
                 return HttpResponse("Your account was inactive.")
         else:
+            messages.add_message(request, messages.INFO, 'Invalid login details given.')
             print("Someone tried to login and failed.")
             print("They used username: {} and password: {}".format(username,password))
-            return HttpResponse("Invalid login details given")
+            return HttpResponseRedirect(reverse("index"), {'messages': messages})
+            # return HttpResponse("Invalid login details given")
     else:
         return render(request, 'bakerapp/login.html', {})
+
+
+def contact(request):
+    return render(request, 'bakerapp/contact.html', {})

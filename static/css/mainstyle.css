@@ -11,9 +11,9 @@ body {
     color: #000;
 }
 
-.navbar-txt a {
+#navbartxt a {
     color: #000;
-    font-size: 22px;
+    font-size: 18px;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -27,4 +27,44 @@ body {
     font-stretch: semi-expanded;
     font-size: 18px;
     font-family: 'Ubuntu', sans-serif;
+}
+
+.contactClass {
+    font-size: 24px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.logoImg {
+  width: 40%
+  height: auto;
+}
+@media screen and (max-width: 1700px) {
+  .logoImg {
+    width: 40%;
+    padding-right: 50px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logoImg {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .logoImg {
+    width: 80%;
+  }
+}
+
+
+#messageId {
+    list-style-type: none;
+    font-size: 30px;
+}
+
+.alert {
+    padding-bottom: 0rem;
+    border-radius: 0px;
 }

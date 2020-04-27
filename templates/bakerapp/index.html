@@ -5,6 +5,20 @@
       
     <div class="container-fluid">
         <div class="row">
+            {% if messages %}
+            <div class="col-md alert alert-primary alert-dismissible fade show border-0 rounded-0 pb-0" role="alert">
+                <ul class="messages" style="list-style-type: none;">
+                    {% for message in messages %}
+                    <li class="text-center text-danger" style="font-family: 'Ubuntu', sans-serif;">{{ message }} | Want to try again? <a href="{% url 'bakerapp:user_login' %}" class="alert-link">Login here</a></li>
+                    {% endfor %}
+                </ul>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endif %}
+        </div>
+        <div class="row">
             <div class="col-md welcomeClass">
                 <h1 class="text-center text-light display-4">Welcome to</h1>
                 <h1 class="text-center text-light display-4 font-weight-bold">Wyethbaker Nigeria Limited</h1>
